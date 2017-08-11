@@ -31,7 +31,6 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_ctor_ok(void);
-extern void test_counts_to_voltage(void);
 
 
 /*=======Test Reset Option=====*/
@@ -46,9 +45,8 @@ void resetTest(void)
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("test_first.c");
+  UnityBegin("test_second.c");
   RUN_TEST(test_ctor_ok, 64);
-  RUN_TEST(test_counts_to_voltage, 70);
 
   return (UnityEnd());
 }

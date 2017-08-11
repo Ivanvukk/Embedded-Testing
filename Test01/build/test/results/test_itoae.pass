@@ -1,0 +1,19 @@
+---
+:source:
+  :path: test
+  :file: test_itoae.c
+:successes:
+- :test: test_basic
+  :line: 55
+  :message: ''
+- :test: test_dpp
+  :line: 66
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 2
+  :passed: 2
+  :failed: 0
+  :ignored: 0
+:stdout: []

@@ -30,8 +30,8 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_ctor_ok(void);
-extern void test_counts_to_voltage(void);
+extern void test_basic(void );
+extern void test_dpp(void );
 
 
 /*=======Test Reset Option=====*/
@@ -46,9 +46,9 @@ void resetTest(void)
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("test_first.c");
-  RUN_TEST(test_ctor_ok, 64);
-  RUN_TEST(test_counts_to_voltage, 70);
+  UnityBegin("test_itoae.c");
+  RUN_TEST(test_basic, 55);
+  RUN_TEST(test_dpp, 66);
 
   return (UnityEnd());
 }

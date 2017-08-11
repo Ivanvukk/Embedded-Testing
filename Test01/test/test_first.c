@@ -66,3 +66,26 @@ void test_ctor_ok(void)
     //-- check that constructor returned OK
     TEST_ASSERT_EQUAL_INT(ADC_HANDLER_RES__OK, _ctor_result);
 }
+
+void test_counts_to_voltage(void)
+{
+    //test converting counts from ADC to voltage measurement
+    T_ADCHandler_Voltage voltage; //output
+    T_ADCHandler_CountsValue counts; //input
+
+
+    counts = 0u;
+    voltage = adc_handler__voltage__get_by_counts_value(&_adc_handler,counts);
+    TEST_ASSERT_EQUAL_INT(0*ADC_HANDLER__SCALE_FACTOR__U, voltage);
+
+
+    counts = 0x3ff;
+    voltage = adc_handler__voltage__get_by_counts_value(&_adc_handler,counts);
+    TEST_ASSERT_EQUAL_INT(10*ADC_HANDLER__SCALE_FACTOR__U, voltage);
+
+    counts = 0x3ff/3;
+    voltage = adc_handler__voltage__get_by_counts_value(&_adc_handler,counts);
+    TEST_ASSERT_EQUAL_INT(3.33*ADC_HANDLER__SCALE_FACTOR__U, voltage);
+
+
+}
