@@ -21,8 +21,8 @@
 #  :use_assembly: FALSE
 
 :environment:
-  :path:
-    -C:/MinGW/bin
+  - :path:
+    - C:\mingw\bin
 
 :extension:
   :executable: .out
