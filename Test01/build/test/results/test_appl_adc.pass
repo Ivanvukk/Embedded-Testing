@@ -1,0 +1,16 @@
+---
+:source:
+  :path: test
+  :file: test_appl_adc.c
+:successes:
+- :test: test_voltage_get
+  :line: 53
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 1
+  :failed: 0
+  :ignored: 0
+:stdout: []

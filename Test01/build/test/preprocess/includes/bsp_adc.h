@@ -1,0 +1,2 @@
+---
+- appl_adc_channels.h
