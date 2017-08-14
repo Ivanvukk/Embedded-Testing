@@ -28,6 +28,7 @@
 #include <setjmp.h>
 #include <stdio.h>
 #include "mock_bsp_adc.h"
+#include "mock_adc_handler.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -46,14 +47,17 @@ static void CMock_Init(void)
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
   mock_bsp_adc_Init();
+  mock_adc_handler_Init();
 }
 static void CMock_Verify(void)
 {
   mock_bsp_adc_Verify();
+  mock_adc_handler_Verify();
 }
 static void CMock_Destroy(void)
 {
   mock_bsp_adc_Destroy();
+  mock_adc_handler_Destroy();
 }
 
 /*=======Test Reset Option=====*/
@@ -72,7 +76,7 @@ void resetTest(void)
 int main(void)
 {
   UnityBegin("test_appl_adc.c");
-  RUN_TEST(test_voltage_get, 53);
+  RUN_TEST(test_voltage_get, 60);
 
   CMock_Guts_MemFreeFinal();
   return (UnityEnd());

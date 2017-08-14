@@ -1,6 +1,6 @@
 ---
 - unity.h
 - mock_bsp_adc.h
+- mock_adc_handler.h
 - appl_adc.h
-- adc_handler.h
 - build/temp/_test_appl_adc.c
