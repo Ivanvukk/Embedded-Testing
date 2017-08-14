@@ -17,6 +17,16 @@
 
 
 
+
+
+
+
+
+
+
+
+ extern T_ADCHandler *_appl_adc__adc_handler__get(enum E_ApplAdcChannel channel);
+
 void setUp(void)
 
 {
@@ -103,9 +113,37 @@ void test_voltage_get(void)
 
 
 
-    adc_handler__voltage__get_by_counts_value_CMockIgnoreAndReturn(74, 456);
+    adc_handler__voltage__get_by_counts_value_CMockExpectAndReturn(
 
 
+
+
+
+
+
+
+
+
+
+
+
+            81
+
+    , _appl_adc__adc_handler__get(APPL_ADC_CH__I_SETT), 123, 456)
+
+
+
+
+
+
+
+
+
+
+
+
+
+             ;
 
 
 
@@ -125,6 +163,6 @@ void test_voltage_get(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(83), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(89), UNITY_DISPLAY_STYLE_INT);
 
 }

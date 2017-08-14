@@ -31,3 +31,11 @@ T_ADCHandler_Voltage appl_adc__voltage__get(enum E_ApplAdcChannel channel_num)
             bsp_adc__value__get(channel_num)
             );
 }
+
+/**
+ * For usage in tests only!
+ */
+T_ADCHandler *_appl_adc__adc_handler__get(enum E_ApplAdcChannel channel)
+{
+    return &_adc_handlers[channel];
+}

@@ -13,7 +13,7 @@
 //-- module being tested
 //   TODO
  
- 
+ extern T_ADCHandler *_appl_adc__adc_handler__get(enum E_ApplAdcChannel channel);
 /*******************************************************************************
  *    DEFINITIONS
  ******************************************************************************/
@@ -69,10 +69,16 @@ void test_voltage_get(void)
             123
             );
  
-    //-- Expect call to adc_handler__voltage__get_by_counts_value(),
+     //-- Expect call to adc_handler__voltage__get_by_counts_value(),
     //   ignoring arguments. The mocked version just returns 456.
-    adc_handler__voltage__get_by_counts_value_IgnoreAndReturn(456);
- 
+    adc_handler__voltage__get_by_counts_value_ExpectAndReturn(
+            //-- pointer to the appropriate ADC handler instance
+            _appl_adc__adc_handler__get(APPL_ADC_CH__I_SETT),
+            //-- value returned from bsp_adc__value__get()
+            123,
+            //-- returned value in Volts
+            456
+            );
     //-- actually call the function being tested, that should perform
     //   all pending expected calls
     T_ADCHandler_Voltage voltage = appl_adc__voltage__get(
