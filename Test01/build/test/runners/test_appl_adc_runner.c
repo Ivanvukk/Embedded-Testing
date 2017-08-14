@@ -76,7 +76,7 @@ void resetTest(void)
 int main(void)
 {
   UnityBegin("test_appl_adc.c");
-  RUN_TEST(test_voltage_get, 60);
+  RUN_TEST(test_voltage_get, 96);
 
   CMock_Guts_MemFreeFinal();
   return (UnityEnd());

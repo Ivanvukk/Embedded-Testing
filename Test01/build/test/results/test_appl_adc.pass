@@ -4,7 +4,7 @@
   :file: test_appl_adc.c
 :successes:
 - :test: test_voltage_get
-  :line: 60
+  :line: 96
   :message: ''
 :failures: []
 :ignores: []
